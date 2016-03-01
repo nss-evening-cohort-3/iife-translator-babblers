@@ -15,6 +15,7 @@ var babbler = (function(babbler) {
 //the original array must be split up and searchable to find the translated word
     var array = string.split(" ")
 // index.Of is used to find the English word and replace it with the Italian 
+    for (var i = 0; i < array.length; i++) {
     array[array.indexOf("merry")] = italian.merry;
     array[array.indexOf("christmas")] = italian.christmas;
     array[array.indexOf("happy")] = italian.happy;
@@ -22,7 +23,7 @@ var babbler = (function(babbler) {
     array[array.indexOf("year")] = italian.year;
     array[array.indexOf("holiday")] = italian.holiday;
     array[array.indexOf("and")] = italian.and;
-
+    }
     var sentence = array.join(" ");
     return sentence; 
 }
