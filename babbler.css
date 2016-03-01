@@ -1,0 +1,63 @@
+/*
+Font styling for the Translator page
+*/
+body {
+ padding-left: 15%;
+ background-image: url("img/abstract-blue-holiday-background-anna-omelchenko.jpg");
+ font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+ max-width: 800px;
+}
+
+h1 {
+ text-align: center;
+
+}
+
+h2 {
+ text-align: center;
+
+}
+
+textarea {
+  border: 1px solid #ccc;
+  text-align: center;
+  margin-left: 30%;
+  font-size: .75em;
+  max-height: 1%;
+  outline: none;
+}
+
+/*drop dowm list styling*/
+#selector {
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #ccc;
+  width: 19%;
+  margin-left: 40%;
+  font-size: 1.5em;
+}
+
+/*button styling */
+#translator{
+  border: 1px solid #ccc;
+  margin-left: 39%;
+  margin-top: 5%;
+  display: inline-block;
+  font-size: 1em;
+}
+
+#clear {
+  border: 1px solid #ccc;
+  margin-left: 2%;
+  font-size: 1em;
+}
+
+/*translated styling*/
+
+p {
+
+ background: white;
+ text-align: center;
+ font-size: 1.5em;
+ 
+}
