@@ -5,7 +5,7 @@
 //capitalize team object agreed on and used as it acts like a "Class" pass in
 //what babler was from other js files
 var Babbler = (function(oldBabbler){    
-  //object lexicon for spanish
+  //object properites lexicon for spanish
   var toSpanish = {
     merry: "Alegre",
     christmas: "Navidad",
@@ -14,23 +14,30 @@ var Babbler = (function(oldBabbler){
     new: "Nuevo",
     year: "Ano"
   };
-  // quicky check to see if phrase entered and return correct oder as english is not 1-1
+  // quicky check to see if phrase entered matches and return correct order as 
+  // english is not 1-1 translation
   oldBabbler.translateToSpanish = function(textPassedIn) {
-    // if (inputText === "merry christmas and happy new year") {
-    //   return "Feliz navidad y próspero año nuevo";
-    // } else {
-      //translate each of the english words in the object to a new object
-      var parsePhraseEntered = textPassedIn.split(" ");
-      parsePhraseEntered[parsePhraseEntered.indexOf("merry")] = toSpanish.merry;
-      parsePhraseEntered[parsePhraseEntered.indexOf("christmas")] = toSpanish.christmas;
-      parsePhraseEntered[parsePhraseEntered.indexOf("and")] = toSpanish.and;
-      parsePhraseEntered[parsePhraseEntered.indexOf("happy")] = toSpanish.happy;
-      parsePhraseEntered[parsePhraseEntered.indexOf("new")] = toSpanish.new;
-      parsePhraseEntered[parsePhraseEntered.indexOf("year")] = toSpanish.year;
-      //english to spanish will be different string structure, not one for one so phrase will 
-      //be inorrect syntax
-      var newPhraseTranslated = parsePhraseEntered.join(" ");
-        return newPhraseTranslated;
-      }  
-  return oldBabbler
+    if (textPassedIn === "merry christmas and happy new year") {
+      return "Feliz navidad y próspero año nuevo";
+      } else {
+
+      //separator " " is removed from the string and the substrings are returned in an array.
+        var parsePhraseEntered = textPassedIn.split(" ");
+        //used for loop to handle mutiple entries of the same word in the array
+        for (var i = 0; i < parsePhraseEntered.length; i++) {
+      
+        //take the spanish object, look in the object to make sure the words passed in are 
+        //contained in the object (named value pairs), if they are, replace the value 
+        //in the new array like example on section 71 and i am checking to make sure that
+        //a value exists in the info passed in
+          if (toSpanish[parsePhraseEntered[i]] !== undefined)  {
+          parsePhraseEntered[i] = toSpanish[parsePhraseEntered[i]];
+          }
+          //build string from new array items
+        }
+        var newPhraseTranslated = parsePhraseEntered.join(" ");
+          return newPhraseTranslated;  //ends function with new phrase translated
+      }
+    }
+  return oldBabbler //ends function with phrase to be 
  }(Babbler || {})); //Optional bonus 1

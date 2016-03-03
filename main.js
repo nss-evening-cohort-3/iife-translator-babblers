@@ -12,7 +12,8 @@ var clearButton = document.getElementById("clear");
 //need to set the HTML Tag with result from IFFE
 function removeText(){
   document.getElementById("textInput").value= "";
-  document.getElementById("translatedGreeting").value= "";
+  document.getElementById("translatedGreeting").innerHTML= "";
+
 }
 
 clearButton.addEventListener("click", removeText);
@@ -26,7 +27,8 @@ clearButton.addEventListener("click", removeText);
 function babble() {
   var language = document.getElementById("selector").value;
   var textInput = document.getElementById("textInput").value;
-  var translated;
+  var translated; 
+  var translatedGreeting = document.getElementById("translatedGreeting");
     if (language === "spanish") {
        translated = Babbler.translateToSpanish(textInput);
     }
@@ -42,7 +44,7 @@ function babble() {
             else if(language === "french")  {
               translated = Babbler.translateToFrench(textInput);
             };
-    translatedGreeting.innerHTML="<p>"+translated+"</p>";
+    translatedGreeting.innerHTML="<p>"+translated+"</p>"; //skipped id. and put actual id with property
  };     
 
 

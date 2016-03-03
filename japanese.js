@@ -18,13 +18,15 @@ var Babbler = (function(babbler){
     var array = string.split(" ") // array = ["merry", "christmas", "and", "happy", "new", "year"]
 
     //use .indexOf to find specific words in the array and overwrite them with Japanese replacements
+    for (var i = 0; i < array.length; i++) {
+
     array[array.indexOf("merry")]     = japanese.merry; // array[0] = "merii"
     array[array.indexOf("christmas")] = japanese.christmas; // array[1] = "kurisumasu"
     array[array.indexOf("and")]       = japanese.and;
     array[array.indexOf("happy")]     = japanese.happy;
     array[array.indexOf("new")]       = japanese.new;
     array[array.indexOf("year")]      = japanese.year;
-
+    }
     //make the array back into a string
     var sentence = array.join(" "); 
 
